@@ -25,7 +25,8 @@ If you want to extend functionality, you can fork this repo and redeploy the bot
 Simple Docker run example:
 
 ```sh
-docker run -e TG_TOKEN=<your token> -v /volumes/tobedo/:/code/db/ devforth/tobedo
+docker run -e TG_TOKEN=<your token> -v /volumes/tobedo/:/code/db/ stanitterheim/tobedoex:latest
+
 ```
 
 Compose example:
@@ -35,9 +36,9 @@ version: '3.3'
 
 services:
   tobedo:
-    image: devforth/tobedo
-    environemnt:
-      - TG_TOKEN=<your token>
+    image: stanitterheim/tobedoex
+    environment:
+      - TG_TOKEN=<token_from_bot_father>
     volumes:
       - /volumes/tobedo/:/code/db/
 ```
